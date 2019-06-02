@@ -1,3 +1,5 @@
+GOOGLE_API_KEY='AIzaSyB0Png694AM5JbGF32DhpwYhhvavPUB2Xc';
+
 reverseGeocode = {
 	data: { },
 	getActualLocation: function (url, callback) {
@@ -14,11 +16,11 @@ reverseGeocode = {
 		});
 	},
 	getSecureLocation: function (lat, lng, callback) {
-		var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng;
+		var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng+'&key='+GOOGLE_API_KEY;
 		this.getActualLocation(url, callback);
 	},
 	getLocation: function(lat, lng, callback){
-		var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng;
+		var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng+'&key='+GOOGLE_API_KEY;
 		this.getActualLocation(url, callback);
 	},
 	getAddrObj: function(){
